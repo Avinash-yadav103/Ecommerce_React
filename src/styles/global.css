@@ -1,0 +1,239 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    font-family: Arial, sans-serif;
+  }
+  
+  .container {
+    /* max-width: 1200px; */
+    margin: 0 auto;
+    padding: 0 20px;
+  }
+  
+  .announcement-bar {
+    background: black;
+    color: white;
+    padding: 8px;
+    text-align: center;
+    font-size: 14px;
+  }
+  
+  .announcement-bar a {
+    color: white;
+    font-weight: bold;
+    text-decoration: none;
+  }
+  
+  .header {
+    border-bottom: 1px solid #eee;
+    padding: 15px 0;
+  }
+  
+  .nav-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .logo {
+    font-size: 24px;
+    font-weight: bold;
+    text-decoration: none;
+    color: black;
+  }
+  
+  .nav-links {
+    display: flex;
+    gap: 24px;
+  }
+  
+  .nav-links a {
+    text-decoration: none;
+    color: black;
+  }
+  
+  .search-cart {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+  }
+  
+  .search-box {
+    position: relative;
+  }
+  
+  .search-input {
+    padding: 8px 32px 8px 12px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    width: 250px;
+  }
+  
+  .icon-button {
+    background: none;
+    border: none;
+    cursor: pointer;
+  }
+  
+  .sidebar {
+    width: 250px;
+    padding-right: 32px;
+  }
+  
+  .category-item {
+    display: flex;
+    justify-content: space-between;
+    padding: 8px 0;
+    cursor: pointer;
+  }
+  
+  .hero-section {
+    background: black;
+    color: white;
+    border-radius: 8px;
+    overflow: hidden;
+    margin: 32px 0;
+  }
+  
+  .hero-content {
+    display: flex;
+    align-items: center;
+  }
+  
+  .hero-text {
+    width: 50%;
+    padding: 48px;
+  }
+  
+  .hero-image {
+    width: 50%;
+  }
+  
+  .flash-sales {
+    margin: 48px 0;
+  }
+  
+  .flash-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 32px;
+  }
+  
+  .timer {
+    display: flex;
+    gap: 16px;
+    font-size: 20px;
+    font-weight: 600;
+  }
+  
+  .timer-unit {
+    text-align: center;
+  }
+  
+  .timer-label {
+    font-size: 12px;
+    color: #666;
+  }
+  
+  .products-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 24px;
+  }
+  
+  .product-card {
+    position: relative;
+  }
+  
+  .product-image {
+    position: relative;
+    aspect-ratio: 1;
+    background: #f5f5f5;
+    border-radius: 8px;
+    overflow: hidden;
+  }
+  
+  .discount-badge {
+    position: absolute;
+    top: 12px;
+    left: 12px;
+    background: #ff4444;
+    color: white;
+    padding: 4px 8px;
+    border-radius: 4px;
+    font-size: 14px;
+  }
+  
+  .auth-container {
+    display: flex;
+    gap: 48px;
+    padding: 32px 0;
+  }
+  
+  .auth-image {
+    width: 50%;
+  }
+  
+  .auth-form {
+    width: 50%;
+    max-width: 400px;
+  }
+  
+  .form-group {
+    margin-bottom: 16px;
+  }
+  
+  .input-field {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    margin-bottom: 16px;
+  }
+  
+  .button {
+    padding: 12px 24px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: 600;
+  }
+  
+  .button-primary {
+    background: #ff4444;
+    color: white;
+  }
+  
+  .button-outline {
+    background: white;
+    border: 1px solid #ddd;
+  }
+  
+  .account-container {
+    display: flex;
+    gap: 48px;
+    padding: 32px 0;
+  }
+  
+  .account-sidebar {
+    width: 250px;
+  }
+  
+  .account-content {
+    flex: 1;
+    max-width: 800px;
+  }
+  
+  .form-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 24px;
+    margin-bottom: 24px;
+  }
+  
+  
