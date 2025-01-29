@@ -3,6 +3,8 @@ import Sidebar from "../components/Sidebar"
 import HomeSlider from "../components/HomeSlider"
 import ProductSection from '../components/ProductSection';
 import CategorySection from '../components/CategorySection';
+import ProductExplorer from '../components/ProductExplorer';
+import NewArrival from "../components/NewArrival";
 
 function Home() {
   return (
@@ -73,11 +75,16 @@ function Home() {
 
 
 
-            <CategorySection />
-            <ProductSection />
+
 
           </div>
+          
         </div>
+        <CategorySection />
+            <ProductSection />
+
+            <ProductExplorer />
+            <NewArrival />
       </main>
     </div>
   )
