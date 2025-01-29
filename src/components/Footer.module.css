@@ -1,0 +1,171 @@
+.footer {
+    background-color: #000;
+    color: #fff;
+    padding: 60px 0 20px;
+  }
+  
+  .footerContent {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 40px;
+    padding: 0 20px;
+  }
+  
+  .footerSection {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+  
+  .logo {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 8px;
+  }
+  
+  .footerSection h3 {
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 8px;
+  }
+  
+  .emailInput {
+    display: flex;
+    border: 1px solid #333;
+    border-radius: 4px;
+    overflow: hidden;
+  }
+  
+  .emailInput input {
+    flex: 1;
+    padding: 8px 12px;
+    background: transparent;
+    border: none;
+    color: white;
+  }
+  
+  .emailInput input:focus {
+    outline: none;
+  }
+  
+  .emailInput button {
+    padding: 8px 12px;
+    background: transparent;
+    border: none;
+    border-left: 1px solid #333;
+    color: white;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+  }
+  
+  .emailInput button:hover {
+    background-color: #333;
+  }
+  
+  .address {
+    line-height: 1.6;
+  }
+  
+  .footerNav {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+  
+  .footerNav a {
+    color: #999;
+    text-decoration: none;
+    transition: color 0.3s ease;
+  }
+  
+  .footerNav a:hover {
+    color: white;
+  }
+  
+  .saveText {
+    color: #999;
+    font-size: 0.9rem;
+  }
+  
+  .downloadSection {
+    display: flex;
+    gap: 16px;
+  }
+  
+  .qrCode {
+    border: 1px solid #333;
+    padding: 8px;
+    border-radius: 4px;
+  }
+  
+  .appButtons {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+  
+  .storeButton {
+    display: block;
+    transition: opacity 0.3s ease;
+  }
+  
+  .storeButton:hover {
+    opacity: 0.8;
+  }
+  
+  .socialLinks {
+    display: flex;
+    gap: 16px;
+    margin-top: 16px;
+  }
+  
+  .socialLinks a {
+    color: white;
+    transition: color 0.3s ease;
+  }
+  
+  .socialLinks a:hover {
+    color: #999;
+  }
+  
+  .copyright {
+    text-align: center;
+    color: #666;
+    margin-top: 40px;
+    padding-top: 20px;
+    border-top: 1px solid #333;
+  }
+  
+  /* Media Queries */
+  @media (max-width: 768px) {
+    .footerContent {
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    }
+  
+    .downloadSection {
+      flex-direction: column;
+    }
+  
+    .qrCode {
+      width: fit-content;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .footer {
+      padding: 40px 0 20px;
+    }
+  
+    .footerContent {
+      gap: 30px;
+    }
+  
+    .footerSection {
+      gap: 12px;
+    }
+  }
+  
+  

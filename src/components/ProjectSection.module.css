@@ -1,0 +1,136 @@
+.section {
+    padding: 40px 0;
+  }
+  
+  .header {
+    margin-bottom: 40px;
+  }
+  
+  .titleWrapper {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 20px;
+  }
+  
+  .indicator {
+    width: 20px;
+    height: 40px;
+    background-color: #db4444;
+    border-radius: 4px;
+  }
+  
+  .headerContent {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .viewAll {
+    padding: 12px 24px;
+    background-color: #db4444;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .viewAll:hover {
+    background-color: #c13838;
+  }
+  
+  .productGrid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(270px, 1fr));
+    gap: 30px;
+  }
+  
+  .productCard {
+    position: relative;
+  }
+  
+  .imageContainer {
+    position: relative;
+    background: #f5f5f5;
+    border-radius: 4px;
+    overflow: hidden;
+  }
+  
+  .productImage {
+    width: 100%;
+    height: auto;
+    transition: transform 0.3s ease;
+  }
+  
+  .overlay {
+    position: absolute;
+    top: 12px;
+    right: 12px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+  
+  .wishlist,
+  .quickView {
+    width: 34px;
+    height: 34px;
+    border-radius: 50%;
+    background: white;
+    border: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+  }
+  
+  .wishlist:hover,
+  .quickView:hover {
+    background: #db4444;
+    color: white;
+  }
+  
+  .details {
+    padding: 16px 0;
+  }
+  
+  .details h3 {
+    margin-bottom: 8px;
+    font-weight: 500;
+  }
+  
+  .pricing {
+    display: flex;
+    gap: 12px;
+    margin-bottom: 8px;
+  }
+  
+  .price {
+    color: #db4444;
+    font-weight: 500;
+  }
+  
+  .originalPrice {
+    color: #666;
+    text-decoration: line-through;
+  }
+  
+  .rating {
+    color: #ffad33;
+  }
+  
+  .reviews {
+    color: #666;
+    margin-left: 8px;
+  }
+  
+  @media (max-width: 768px) {
+    .productGrid {
+      grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+      gap: 20px;
+    }
+  }
+  
+  

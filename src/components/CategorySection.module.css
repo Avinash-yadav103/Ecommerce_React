@@ -1,0 +1,86 @@
+.section {
+    padding: 40px 0;
+  }
+  
+  .header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 40px;
+  }
+  
+  .titleWrapper {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+  
+  .indicator {
+    width: 20px;
+    height: 40px;
+    background-color: #db4444;
+    border-radius: 4px;
+  }
+  
+  .navigation {
+    display: flex;
+    gap: 8px;
+  }
+  
+  .navButton {
+    width: 46px;
+    height: 46px;
+    border: 1px solid #d9d9d9;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: white;
+    cursor: pointer;
+    transition: all 0.3s ease;
+  }
+  
+  .navButton:hover {
+    background: #db4444;
+    color: white;
+    border-color: #db4444;
+  }
+  
+  .categoryGrid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(170px, 1fr));
+    gap: 20px;
+  }
+  
+  .categoryCard {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 25px;
+    border: 1px solid #d9d9d9;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+  }
+  
+  .categoryCard:hover {
+    border-color: #db4444;
+  }
+  
+  .categoryCard.active {
+    background-color: #db4444;
+    border-color: #db4444;
+    color: white;
+  }
+  
+  .active .iconWrapper {
+    color: white;
+  }
+  
+  .iconWrapper {
+    margin-bottom: 16px;
+    color: #000;
+  }
+  
+  

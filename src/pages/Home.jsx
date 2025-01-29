@@ -1,6 +1,8 @@
 import Navigation from "../components/Navigation"
 import Sidebar from "../components/Sidebar"
-// import { HomeSlider } from "../components/HomeSlider"
+import HomeSlider from "../components/HomeSlider"
+import ProductSection from '../components/ProductSection';
+import CategorySection from '../components/CategorySection';
 
 function Home() {
   return (
@@ -14,7 +16,7 @@ function Home() {
           <div style={{ flex: 1 }}>
             <div className="hero-section">
               <div className="hero-content">
-                {/* <HomeSlider /> */}
+                <HomeSlider />
               </div>
             </div>
 
@@ -68,6 +70,12 @@ function Home() {
                 {/* More product cards */}
               </div>
             </div>
+
+
+
+            <CategorySection />
+            <ProductSection />
+
           </div>
         </div>
       </main>
