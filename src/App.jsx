@@ -10,6 +10,8 @@ import Wishlist from './components/WIshlist';
 import Cart from './components/Cart';
 import Checkout from './components/Checkout';
 import MyAccount from './components/MyAccount';
+import Not from './components/Not';
+import ProductDetail from './components/ProductDetail';
 
 import './styles/global.css';
 
@@ -17,6 +19,7 @@ function App() {
   return (
     <>    
     {/* <HomeSlider /> */}
+    <ProductDetail />
     <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/sign-up" element={<SignUp />} />
@@ -26,6 +29,7 @@ function App() {
         <Route path="/cart" element={<Cart />} />
         <Route path="/cart/checkout" element={<Checkout />} />
         <Route path="/account/my-account" element={<MyAccount />} />
+        <Route path="*" element={<Not />} /> 
     </Routes>
     <Footer />
 
