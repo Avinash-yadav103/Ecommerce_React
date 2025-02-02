@@ -1,0 +1,235 @@
+.cart-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 40px 20px;
+  }
+  
+  .breadcrumb {
+    display: flex;
+    gap: 8px;
+    margin-bottom: 40px;
+    color: #666;
+  }
+  
+  .breadcrumb a {
+    color: #000;
+    text-decoration: none;
+  }
+  
+  .breadcrumb a:hover {
+    text-decoration: underline;
+  }
+  
+  .cart-content {
+    display: grid;
+    grid-template-columns: 1fr 350px;
+    gap: 30px;
+  }
+  
+  .cart-header {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr 1fr;
+    padding: 16px;
+    background: #f5f5f5;
+    font-weight: 500;
+  }
+  
+  .cart-item {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr 1fr;
+    padding: 16px;
+    border-bottom: 1px solid #e5e5e5;
+    align-items: center;
+  }
+  
+  .product-col {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+  }
+  
+  .remove-button {
+    background: none;
+    border: none;
+    color: #db4444;
+    cursor: pointer;
+    padding: 4px;
+  }
+  
+  .product-image {
+    width: 80px;
+    height: 80px;
+    object-fit: cover;
+    border-radius: 4px;
+  }
+  
+  .quantity-selector {
+    display: flex;
+    align-items: center;
+    max-width: 100px;
+  }
+  
+  .quantity-selector input {
+    width: 60px;
+    height: 40px;
+    border: 1px solid #e5e5e5;
+    text-align: center;
+    font-size: 14px;
+  }
+  
+  .quantity-buttons {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .quantity-buttons button {
+    border: 1px solid #e5e5e5;
+    background: white;
+    padding: 4px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .quantity-buttons button:hover {
+    background: #f5f5f5;
+  }
+  
+  .cart-actions {
+    display: flex;
+    justify-content: space-between;
+    padding: 20px 0;
+  }
+  
+  .return-button,
+  .update-button {
+    padding: 12px 24px;
+    border: 1px solid #000;
+    background: white;
+    cursor: pointer;
+    transition: all 0.3s ease;
+  }
+  
+  .return-button:hover,
+  .update-button:hover {
+    background: #000;
+    color: white;
+  }
+  
+  .coupon-section form {
+    display: flex;
+    gap: 12px;
+    margin-bottom: 30px;
+  }
+  
+  .coupon-section input {
+    flex: 1;
+    padding: 12px;
+    border: 1px solid #e5e5e5;
+  }
+  
+  .coupon-section button {
+    padding: 12px 24px;
+    background: #db4444;
+    color: white;
+    border: none;
+    cursor: pointer;
+    white-space: nowrap;
+  }
+  
+  .coupon-section button:hover {
+    background: #c13838;
+  }
+  
+  .cart-total {
+    border: 1px solid #e5e5e5;
+    padding: 24px;
+  }
+  
+  .cart-total h2 {
+    margin-bottom: 20px;
+  }
+  
+  .total-row {
+    display: flex;
+    justify-content: space-between;
+    padding: 12px 0;
+    border-bottom: 1px solid #e5e5e5;
+  }
+  
+  .total-row.total {
+    font-weight: 500;
+    font-size: 18px;
+  }
+  
+  .checkout-button {
+    width: 100%;
+    padding: 16px;
+    background: #db4444;
+    color: white;
+    border: none;
+    margin-top: 20px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .checkout-button:hover {
+    background: #c13838;
+  }
+  
+  @media (max-width: 968px) {
+    .cart-content {
+      grid-template-columns: 1fr;
+    }
+  }
+  
+  @media (max-width: 768px) {
+    .cart-header {
+      display: none;
+    }
+  
+    .cart-item {
+      grid-template-columns: 1fr;
+      gap: 12px;
+    }
+  
+    .price-col,
+    .quantity-col,
+    .subtotal-col {
+      display: flex;
+      justify-content: space-between;
+      padding: 8px 0;
+    }
+  
+    .price-col::before {
+      content: "Price:";
+      font-weight: 500;
+    }
+  
+    .quantity-col::before {
+      content: "Quantity:";
+      font-weight: 500;
+    }
+  
+    .subtotal-col::before {
+      content: "Subtotal:";
+      font-weight: 500;
+    }
+  
+    .cart-actions {
+      flex-direction: column;
+      gap: 12px;
+    }
+  
+    .return-button,
+    .update-button {
+      width: 100%;
+    }
+  
+    .coupon-section form {
+      flex-direction: column;
+    }
+  }
+  
+  

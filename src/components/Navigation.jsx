@@ -28,8 +28,8 @@ function Navigation() {
               </div>
   
               <button className="icon-button">♥</button>
-              <button className="icon-button">🛒</button>
-              <button className="icon-button">👤</button>
+              <button className="icon-button"><Link to='/cart'>🛒</Link></button>
+              <Link to='/account'><button className="icon-button">👤</button></Link>
             </div>
           </div>
         </header>
