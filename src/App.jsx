@@ -6,7 +6,7 @@ import Login from './pages/Login';
 import Account from './pages/Account';
 import HomeSlider from './components/HomeSlider';
 import Footer from './components/Footer';
-import Wishlist from './components/WIshlist';
+import Wishlist from './components/Wishlist';
 import Cart from './components/Cart';
 import Checkout from './components/Checkout';
 import MyAccount from './components/MyAccount';
