@@ -1,100 +1,68 @@
-import React from 'react';
-import { motion } from 'framer-motion';
-import { useInView } from 'react-intersection-observer';
+import React, { useEffect, useRef } from 'react';
+import { motion, useInView, useAnimation } from 'framer-motion';
 import styles from './AboutUs.module.css';
-import Navigation from '../components/Navigation';
+import AOS from 'aos';
+import 'aos/dist/aos.css';
+import { Heart, Box, Users, Star, TrendingUp, Clock } from 'lucide-react';
 
-const AboutUs = () => {
-  const [heroRef, heroInView] = useInView({
-    triggerOnce: true,
-    threshold: 0.1,
-  });
-
-  const [storyRef, storyInView] = useInView({
-    triggerOnce: true,
-    threshold: 0.1,
-  });
-
-  const [valuesRef, valuesInView] = useInView({
-    triggerOnce: true,
-    threshold: 0.1,
-  });
-
-  const [teamRef, teamInView] = useInView({
-    triggerOnce: true,
-    threshold: 0.1,
-  });
-
+export default function AboutUs() {
+  const storyRef = useRef(null);
+  const statsRef = useRef(null);
+  const valuesRef = useRef(null);
+  const teamRef = useRef(null);
+  const testimonialsRef = useRef(null);
+  
+  const storyInView = useInView(storyRef, { once: true, amount: 0.3 });
+  const statsInView = useInView(statsRef, { once: true, amount: 0.3 });
+  const valuesInView = useInView(valuesRef, { once: true, amount: 0.3 });
+  const teamInView = useInView(teamRef, { once: true, amount: 0.3 });
+  const testimonialsInView = useInView(testimonialsRef, { once: true, amount: 0.3 });
+  
+  useEffect(() => {
+    AOS.init({
+      duration: 800,
+      easing: 'ease-in-out',
+      once: true,
+    });
+  }, []);
+  
   const fadeIn = {
-    hidden: { opacity: 0, y: 30 },
-    visible: { opacity: 1, y: 0, transition: { duration: 0.8 } }
+    hidden: { opacity: 0, y: 20 },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: { duration: 0.6, staggerChildren: 0.2 }
+    }
   };
 
-  const teamMembers = [
-    {
-      name: "Sarah Johnson",
-      role: "CEO & Founder",
-      image: "https://images.unsplash.com/photo-1580489944761-15a19d654956?w=300&h=300&fit=crop",
-      bio: "With over 15 years in retail, Sarah founded Exclusive with a vision to create an exceptional online shopping experience."
-    },
-    {
-      name: "Michael Chen",
-      role: "CTO",
-      image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=300&h=300&fit=crop",
-      bio: "Leading our tech team, Michael ensures our platform delivers a seamless shopping experience across all devices."
-    },
-    {
-      name: "Amara Rodriguez",
-      role: "Creative Director",
-      image: "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=300&h=300&fit=crop",
-      bio: "Amara brings our brand to life through captivating visuals and creative direction that sets us apart in the market."
-    },
-    {
-      name: "David Kim",
-      role: "Head of Customer Experience",
-      image: "https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?w=300&h=300&fit=crop",
-      bio: "David ensures every customer interaction exceeds expectations, building loyalty and trust in our brand."
-    }
-  ];
-
   return (
-    <>    
-    <Navigation />
-    <div className={styles.aboutPage}>
+    <div className={styles.aboutContainer}>
+      {/* Hero Section */}
       <motion.section 
         className={styles.hero}
-        ref={heroRef}
-        initial="hidden"
-        animate={heroInView ? "visible" : "hidden"}
-        variants={fadeIn}
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ duration: 1 }}
       >
         <div className={styles.heroContent}>
-          <h1 data-aos="fade-up">About Exclusive</h1>
-          <p data-aos="fade-up" data-aos-delay="200">
-            We're revolutionizing e-commerce with curated collections and exceptional customer service
-          </p>
+          <motion.h1 
+            initial={{ y: -50, opacity: 0 }} 
+            animate={{ y: 0, opacity: 1 }}
+            transition={{ delay: 0.2, duration: 0.8 }}
+          >
+            About Exclusive
+          </motion.h1>
+          <motion.p
+            initial={{ y: 50, opacity: 0 }}
+            animate={{ y: 0, opacity: 1 }}
+            transition={{ delay: 0.4, duration: 0.8 }}
+          >
+            Your premier destination for quality products and exceptional shopping experiences
+          </motion.p>
         </div>
       </motion.section>
 
-      <section className={styles.stats} data-aos="fade-up">
-        <div className={styles.statItem}>
-          <span className={styles.statNumber}>10M+</span>
-          <span className={styles.statLabel}>Happy Customers</span>
-        </div>
-        <div className={styles.statItem}>
-          <span className={styles.statNumber}>15+</span>
-          <span className={styles.statLabel}>Years of Excellence</span>
-        </div>
-        <div className={styles.statItem}>
-          <span className={styles.statNumber}>100+</span>
-          <span className={styles.statLabel}>Premium Brands</span>
-        </div>
-        <div className={styles.statItem}>
-          <span className={styles.statNumber}>200+</span>
-          <span className={styles.statLabel}>Team Members</span>
-        </div>
-      </section>
-
+      {/* Our Story */}
       <motion.section 
         className={styles.story}
         ref={storyRef}
@@ -104,20 +72,22 @@ const AboutUs = () => {
       >
         <div className={styles.storyContent}>
           <div className={styles.storyText}>
-            <h2 data-aos="fade-right">Our Story</h2>
-            <p data-aos="fade-right" data-aos-delay="100">
-              Founded in 2010, Exclusive began as a small online boutique specializing in unique fashion finds. 
-              Our founder Sarah Johnson believed that online shopping should be just as exciting and personalized 
-              as shopping in a high-end store.
+            <h2 data-aos="fade-up">Our Story</h2>
+            <p data-aos="fade-up" data-aos-delay="100">
+              Founded in 2015, Exclusive began as a small online store with a big vision: to create a 
+              shopping platform that offers premium products at accessible prices. What started with a 
+              small team of just five passionate individuals has grown into an international e-commerce 
+              destination trusted by millions of customers worldwide.
             </p>
-            <p data-aos="fade-right" data-aos-delay="200">
-              Over the years, we've grown from a small team of 5 passionate individuals to a thriving company 
-              of over 200 employees. What hasn't changed is our commitment to quality, customer service, and 
-              providing a curated shopping experience that delights our customers.
+            <p data-aos="fade-up" data-aos-delay="200">
+              Our journey has been guided by our commitment to quality, innovation, and customer satisfaction. 
+              We've carefully curated our selection of products, partnering with trusted brands and emerging 
+              designers to bring you the very best in every category.
             </p>
-            <p data-aos="fade-right" data-aos-delay="300">
-              Today, Exclusive offers everything from fashion and electronics to home goods and beauty products, 
-              carefully selected to ensure only the best makes it to our shelves.
+            <p data-aos="fade-up" data-aos-delay="300">
+              Today, Exclusive stands as a testament to our founding principles. We continue to evolve 
+              and expand, but our core mission remains the same: to provide exceptional products and 
+              shopping experiences to customers around the globe.
             </p>
           </div>
           <div className={styles.storyImage} data-aos="fade-left">
@@ -126,6 +96,7 @@ const AboutUs = () => {
         </div>
       </motion.section>
 
+      {/* Our Values */}
       <motion.section 
         className={styles.values}
         ref={valuesRef}
@@ -136,28 +107,57 @@ const AboutUs = () => {
         <h2 data-aos="fade-up">Our Values</h2>
         <div className={styles.valuesGrid}>
           <div className={styles.valueCard} data-aos="zoom-in" data-aos-delay="100">
-            <div className={styles.valueIcon}>🌟</div>
+            <div className={styles.valueIcon}><Star /></div>
             <h3>Excellence</h3>
             <p>We strive for excellence in everything we do, from product selection to delivery.</p>
           </div>
           <div className={styles.valueCard} data-aos="zoom-in" data-aos-delay="200">
-            <div className={styles.valueIcon}>🤝</div>
+            <div className={styles.valueIcon}><Users /></div>
             <h3>Customer First</h3>
             <p>Our customers are at the heart of every decision we make.</p>
           </div>
           <div className={styles.valueCard} data-aos="zoom-in" data-aos-delay="300">
-            <div className={styles.valueIcon}>♻️</div>
+            <div className={styles.valueIcon}><Box /></div>
             <h3>Sustainability</h3>
             <p>We're committed to reducing our environmental impact and promoting sustainable practices.</p>
           </div>
           <div className={styles.valueCard} data-aos="zoom-in" data-aos-delay="400">
-            <div className={styles.valueIcon}>🔍</div>
-            <h3>Quality</h3>
-            <p>We never compromise on quality, ensuring every product meets our high standards.</p>
+            <div className={styles.valueIcon}><TrendingUp /></div>
+            <h3>Innovation</h3>
+            <p>We continuously seek new ways to improve and enhance the shopping experience.</p>
           </div>
         </div>
       </motion.section>
 
+      {/* Stats Section */}
+      <motion.section 
+        className={styles.stats}
+        ref={statsRef}
+        initial="hidden"
+        animate={statsInView ? "visible" : "hidden"}
+        variants={fadeIn}
+      >
+        <div className={styles.statsGrid}>
+          <div className={styles.statCard} data-aos="fade-up">
+            <h3>10M+</h3>
+            <p>Customers Worldwide</p>
+          </div>
+          <div className={styles.statCard} data-aos="fade-up" data-aos-delay="100">
+            <h3>45+</h3>
+            <p>Countries Served</p>
+          </div>
+          <div className={styles.statCard} data-aos="fade-up" data-aos-delay="200">
+            <h3>100K+</h3>
+            <p>Products Available</p>
+          </div>
+          <div className={styles.statCard} data-aos="fade-up" data-aos-delay="300">
+            <h3>4.8</h3>
+            <p>Average Rating</p>
+          </div>
+        </div>
+      </motion.section>
+
+      {/* Team Section */}
       <motion.section 
         className={styles.team}
         ref={teamRef}
@@ -167,43 +167,59 @@ const AboutUs = () => {
       >
         <h2 data-aos="fade-up">Meet Our Leadership Team</h2>
         <div className={styles.teamGrid}>
-          {teamMembers.map((member, index) => (
-            <div 
-              className={styles.teamCard} 
-              key={member.name}
-              data-aos="fade-up" 
-              data-aos-delay={100 * index}
-            >
-              <div className={styles.teamImageContainer}>
-                <img src={member.image} alt={member.name} className={styles.teamImage} />
-                <div className={styles.teamSocial}>
-                  <a href="#" className={styles.socialIcon}>in</a>
-                  <a href="#" className={styles.socialIcon}>f</a>
-                  <a href="#" className={styles.socialIcon}>tw</a>
-                </div>
-              </div>
-              <h3>{member.name}</h3>
-              <span className={styles.role}>{member.role}</span>
-              <p>{member.bio}</p>
+          <div className={styles.teamMember} data-aos="fade-up" data-aos-delay="100">
+            <div className={styles.memberImage}>
+              <img src="https://images.unsplash.com/photo-1560250097-0b93528c311a?auto=format&fit=crop&w=300&h=300" alt="CEO" />
             </div>
-          ))}
+            <h3>David Johnson</h3>
+            <p>CEO & Founder</p>
+          </div>
+          <div className={styles.teamMember} data-aos="fade-up" data-aos-delay="200">
+            <div className={styles.memberImage}>
+              <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=300&h=300" alt="COO" />
+            </div>
+            <h3>Sarah Miller</h3>
+            <p>Chief Operations Officer</p>
+          </div>
+          <div className={styles.teamMember} data-aos="fade-up" data-aos-delay="300">
+            <div className={styles.memberImage}>
+              <img src="https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?auto=format&fit=crop&w=300&h=300" alt="CTO" />
+            </div>
+            <h3>Michael Chen</h3>
+            <p>Chief Technology Officer</p>
+          </div>
+          <div className={styles.teamMember} data-aos="fade-up" data-aos-delay="400">
+            <div className={styles.memberImage}>
+              <img src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?auto=format&fit=crop&w=300&h=300" alt="CMO" />
+            </div>
+            <h3>Emily Rodriguez</h3>
+            <p>Chief Marketing Officer</p>
+          </div>
         </div>
       </motion.section>
 
-      <section className={styles.brands} data-aos="fade-up">
-        <h2>Trusted by Premium Brands</h2>
-        <div className={styles.brandLogos}>
-          <img src="https://images.unsplash.com/photo-1494253109108-2e30c049369b?w=150&h=80&fit=crop&auto=format" alt="Brand logo" />
-          <img src="https://images.unsplash.com/photo-1563302111-ecc7b8e5d7b1?w=150&h=80&fit=crop&auto=format" alt="Brand logo" />
-          <img src="https://images.unsplash.com/photo-1590247813693-5541d1c609fd?w=150&h=80&fit=crop&auto=format" alt="Brand logo" />
-          <img src="https://images.unsplash.com/photo-1519389950473-47ba0277781c?w=150&h=80&fit=crop&auto=format" alt="Brand logo" />
-          <img src="https://images.unsplash.com/photo-1565372195458-9de0b320ef04?w=150&h=80&fit=crop&auto=format" alt="Brand logo" />
-        </div>
-      </section>
+      {/* CTA Section */}
+      <motion.section 
+        className={styles.cta}
+        initial={{ opacity: 0, y: 50 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.8 }}
+      >
+        <motion.h2
+          whileHover={{ scale: 1.05 }}
+          transition={{ type: "spring", stiffness: 300 }}
+        >
+          Join Our Journey
+        </motion.h2>
+        <p>Discover the difference when you shop with us</p>
+        <motion.button 
+          className={styles.ctaButton}
+          whileHover={{ scale: 1.05 }}
+          whileTap={{ scale: 0.95 }}
+        >
+          Shop Now
+        </motion.button>
+      </motion.section>
     </div>
-    </>
-
   );
-};
-
-export default AboutUs;
+}

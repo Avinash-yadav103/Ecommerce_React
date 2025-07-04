@@ -20,7 +20,7 @@ import './styles/global.css';
 function App() {
   return (
     <>    
-      {/* <Navigation /> */}
+      <Navigation />
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/sign-up" element={<SignUp />} />
