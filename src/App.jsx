@@ -12,6 +12,8 @@ import MyAccount from './components/MyAccount';
 import Not from './components/Not';
 import ProductDetail from './components/ProductDetail';
 import Navigation from './components/Navigation';
+import AboutUs from './pages/AboutUs';
+import ContactUs from './pages/ContactUs';
 
 import './styles/global.css';
 
@@ -29,6 +31,8 @@ function App() {
         <Route path="/cart" element={<Cart />} />
         <Route path="/checkout" element={<Checkout />} />
         <Route path="/product/:id" element={<ProductDetail />} />
+        <Route path="/about" element={<AboutUs />} />
+        <Route path="/contact" element={<ContactUs />} />
         <Route path="*" element={<Not />} /> 
       </Routes>
       <Footer />

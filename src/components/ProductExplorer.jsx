@@ -1,8 +1,10 @@
 'use client'
 
-import { useState } from 'react'
-import { Heart, Eye, ChevronLeft, ChevronRight } from 'lucide-react'
+import React, { useState } from 'react'
+import { Heart, Eye, Star, ChevronLeft, ChevronRight } from 'lucide-react'
+import { Link } from 'react-router-dom'
 import styles from './ProductExplorer.module.css'
+import { motion } from 'framer-motion'
 
 const products = [
 	{
@@ -83,7 +85,7 @@ function ProductExplorer() {
 	const [hoveredProduct, setHoveredProduct] = useState(null)
 
 	return (
-		<section className={styles.section}>
+		<section className={styles.section} data-aos="fade-up">
 			<div className={styles.header}>
 				<div className={styles.titleWrapper}>
 					<div className={styles.indicator}></div>
@@ -104,62 +106,79 @@ function ProductExplorer() {
 
 			<div className={styles.productGrid}>
 				{products.map((product) => (
-					<div
+					<motion.div
 						key={product.id}
-						className={`${styles.productCard} ${
-							hoveredProduct === product.id ? styles.hovered : ''
-						}`}
-						onMouseEnter={() => setHoveredProduct(product.id)}
-						onMouseLeave={() => setHoveredProduct(null)}
+						className={styles.productCard}
+						onHoverStart={() => setHoveredProduct(product.id)}
+						onHoverEnd={() => setHoveredProduct(null)}
+						whileHover={{ y: -10 }}
+						transition={{ duration: 0.3 }}
+						data-aos="fade-up"
+						data-aos-delay={(product.id % 4) * 100}
 					>
 						<div className={styles.imageContainer}>
-							{product.isNew && <span className={styles.newTag}>New</span>}
+							{product.isNew && <span className={styles.newTag}>NEW</span>}
 							<div className={styles.overlay}>
 								<button className={styles.wishlist}>
-									<Heart size={20} />
+									<Heart size={18} />
 								</button>
 								<button className={styles.quickView}>
-									<Eye size={20} />
+									<Eye size={18} />
 								</button>
 							</div>
-							<img
-								src={product.image || '/placeholder.svg'}
-								alt={product.name}
-								className={styles.productImage}
-								loading="lazy"
-								width="200"
-								height="200"
-							/>
+							<Link to={`/product/${product.id}`}>
+								<motion.img
+									src={product.image}
+									alt={product.name}
+									className={styles.productImage}
+									whileHover={{ scale: 1.05 }}
+								/>
+							</Link>
+							{hoveredProduct === product.id && (
+								<motion.button
+									initial={{ opacity: 0, y: 20 }}
+									animate={{ opacity: 1, y: 0 }}
+									className={styles.addToCartButton}
+								>
+									Add To Cart
+								</motion.button>
+							)}
 						</div>
 						<div className={styles.details}>
 							<h3>{product.name}</h3>
 							<div className={styles.priceRating}>
 								<span className={styles.price}>${product.price}</span>
 								<div className={styles.rating}>
-									{'★'.repeat(product.rating)}{'☆'.repeat(5 - product.rating)}
-									<span className={styles.reviews}>
-										({product.reviews})
-									</span>
+									{Array(5)
+										.fill()
+										.map((_, index) => (
+											<Star
+												key={index}
+												size={16}
+												fill={index < product.rating ? 'currentColor' : 'none'}
+												stroke={index < product.rating ? 'currentColor' : 'currentColor'}
+											/>
+										))}
+									<span className={styles.reviews}>({product.reviews})</span>
 								</div>
 							</div>
 							{product.colors && (
 								<div className={styles.colors}>
-									{product.colors.map((color, index) => (
+									{product.colors.map((color) => (
 										<button
-											key={index}
+											key={color}
 											className={styles.colorOption}
 											style={{ backgroundColor: color }}
-											aria-label={`Select color ${color}`}
 										/>
 									))}
 								</div>
 							)}
 						</div>
-					</div>
+					</motion.div>
 				))}
 			</div>
 
-			<div className={styles.viewAllContainer}>
+			<div className={styles.viewAllContainer} data-aos="fade-up">
 				<button className={styles.viewAll}>View All Products</button>
 			</div>
 		</section>

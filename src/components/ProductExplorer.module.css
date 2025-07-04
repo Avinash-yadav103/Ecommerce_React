@@ -192,6 +192,53 @@
   background-color: #c13838;
 }
 
+.addToCartButton {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 12px;
+  background: #db4444;
+  color: white;
+  border: none;
+  text-align: center;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.addToCartButton:hover {
+  background: #c13838;
+}
+
+/* Add animation keyframes */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.05);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+.productCard:hover .newTag {
+  animation: pulse 1s infinite;
+}
+
 @media (max-width: 768px) {
   .productGrid {
     grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
