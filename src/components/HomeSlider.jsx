@@ -5,39 +5,32 @@ import "./HomeSlider.css";
 const sliderData = [
   {
     id: 1,
-    logo: "../assets/placeholder.svg",
+    logo: "https://images.unsplash.com/photo-1618932260643-eee4a2f652a6?w=50&h=50",
     title: "iPhone 14 Series",
     offer: "Up to 10% off Voucher",
-    image: "../assets/product1.png",
+    image: "https://images.unsplash.com/photo-1591337676887-a217a6970a8a",
   },
   {
     id: 2,
-    logo: "../assets/placeholder.svg",
+    logo: "https://images.unsplash.com/photo-1544244015-0df4b3ffc6b0?w=50&h=50",
     title: "Samsung Galaxy S23",
     offer: "Special Launch Offer 15% Off",
-    image: "../assets/product2.png",
+    image: "https://images.unsplash.com/photo-1610792516307-ea5acd9c3b00",
   },
   {
     id: 3,
-    logo: "../assets/placeholder.svg",
+    logo: "https://images.unsplash.com/photo-1526406915894-7bcd65f60845?w=50&h=50",
     title: "MacBook Pro M2",
     offer: "Student Discount Available",
-    image: "../assets/product3.png",
+    image: "https://images.unsplash.com/photo-1511385348-a52b4a160dc2",
   },
   {
     id: 4,
-    logo: "../assets/placeholder.svg",
+    logo: "https://images.unsplash.com/photo-1618932260643-eee4a2f652a6?w=50&h=50",
     title: "iPad Pro 2023",
     offer: "Free Apple Pencil Included",
-    image: "../assets/product4.png",
-  },
-  {
-    id: 5,
-    logo: "../assets/placeholder.svg",
-    title: "AirPods Pro",
-    offer: "20% Off Limited Time",
-    image: "../assets/product1.png",
-  },
+    image: "https://images.unsplash.com/photo-1589739900879-927faea521f1",
+  }
 ];
 
 function HomeSlider() {

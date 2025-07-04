@@ -5,7 +5,7 @@ const products = [
   {
     id: 1,
     name: "The north coat",
-    image: "/placeholder.svg",
+    image: "https://images.unsplash.com/photo-1591047139829-d91aecb6caea",
     price: 260,
     originalPrice: 365,
     rating: 5,
@@ -14,7 +14,7 @@ const products = [
   {
     id: 2,
     name: "Gucci duffle bag",
-    image: "/placeholder.svg",
+    image: "https://images.unsplash.com/photo-1590874103328-eac38a683ce7",
     price: 960,
     originalPrice: 1160,
     rating: 4,
@@ -23,7 +23,7 @@ const products = [
   {
     id: 3,
     name: "RGB liquid CPU Cooler",
-    image: "/placeholder.svg",
+    image: "https://images.unsplash.com/photo-1624705002806-5d72df19c3ad",
     price: 160,
     originalPrice: 170,
     rating: 4,
@@ -32,7 +32,7 @@ const products = [
   {
     id: 4,
     name: "Small BookSelf",
-    image: "/placeholder.svg",
+    image: "https://images.unsplash.com/photo-1616486338812-3dadae4b4ace",
     price: 360,
     originalPrice: null,
     rating: 5,

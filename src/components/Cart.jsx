@@ -11,14 +11,14 @@ const initialCartItems = [
     name: "LCD Monitor",
     price: 650,
     quantity: 1,
-    image: "/placeholder.svg?height=80&width=80",
+    image: "https://images.unsplash.com/photo-1527443224154-c4a3942d3acf",
   },
   {
     id: 2,
     name: "H1 Gamepad",
     price: 550,
     quantity: 2,
-    image: "/placeholder.svg?height=80&width=80",
+    image: "https://images.unsplash.com/photo-1601784551446-20c9e07cdbdb",
   },
 ]
 

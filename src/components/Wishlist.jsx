@@ -9,25 +9,25 @@ const wishlistItems = [
     price: 960,
     originalPrice: 1160,
     discount: 35,
-    image: "/placeholder.svg?height=200&width=200",
+    image: "https://images.unsplash.com/photo-1590874103328-eac38a683ce7",
   },
   {
     id: 2,
     name: "RGB liquid CPU Cooler",
     price: 1960,
-    image: "/placeholder.svg?height=200&width=200",
+    image: "https://images.unsplash.com/photo-1624705002806-5d72df19c3ad",
   },
   {
     id: 3,
     name: "GP11 Shooter USB Gamepad",
     price: 550,
-    image: "/placeholder.svg?height=200&width=200",
+    image: "https://images.unsplash.com/photo-1601784551446-20c9e07cdbdb",
   },
   {
     id: 4,
     name: "Quilted Satin Jacket",
     price: 750,
-    image: "/placeholder.svg?height=200&width=200",
+    image: "https://images.unsplash.com/photo-1591047139829-d91aecb6caea",
   },
 ]
 

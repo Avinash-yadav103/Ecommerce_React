@@ -1,18 +1,20 @@
-import { useState } from "react"
+import { useState, useEffect } from "react"
 import { Heart, Minus, Plus, Truck, RotateCcw } from "lucide-react"
+import { useParams, Link } from "react-router-dom"
 import "./css/ProductDetail.css"
 
 const thumbnails = [
-  "/placeholder.svg?height=100&width=100",
-  "/placeholder.svg?height=100&width=100",
-  "/placeholder.svg?height=100&width=100",
-  "/placeholder.svg?height=100&width=100",
+  "https://images.unsplash.com/photo-1601784551446-20c9e07cdbdb?w=100&h=100",
+  "https://images.unsplash.com/photo-1600080972464-8e5f35f63d08?w=100&h=100",
+  "https://images.unsplash.com/photo-1591104196282-1563019071db?w=100&h=100",
+  "https://images.unsplash.com/photo-1554213352-5ffe6534af08?w=100&h=100",
 ]
 
 const sizes = ["XS", "S", "M", "L", "XL"]
-const colors = ["#FFFFFF", "#DB4444"]
+const colors = ["#FFFFFF", "#DB4444", "#000000"]
 
 export default function ProductDetail() {
+  const { id } = useParams();
   const [selectedImage, setSelectedImage] = useState(0)
   const [selectedColor, setSelectedColor] = useState(0)
   const [selectedSize, setSelectedSize] = useState("M")
@@ -28,9 +30,9 @@ export default function ProductDetail() {
   return (
     <div className="product-detail-container">
       <div className="breadcrumb">
-        <a href="/account">Account</a>
+        <Link to="/">Home</Link>
         <span>/</span>
-        <a href="/gaming">Gaming</a>
+        <Link to="/gaming">Gaming</Link>
         <span>/</span>
         <span>Havic HV G-92 Gamepad</span>
       </div>
@@ -44,13 +46,13 @@ export default function ProductDetail() {
                 className={`thumbnail ${selectedImage === index ? "active" : ""}`}
                 onClick={() => setSelectedImage(index)}
               >
-                <img src={thumb || "/placeholder.svg"} alt={`Product view ${index + 1}`} />
+                <img src={thumb} alt={`Product view ${index + 1}`} />
               </button>
             ))}
           </div>
           <div className="main-image">
             <img
-              src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/image-5WSRe20xpmIrVf6lIXYjUVJL7LOKDb.png"
+              src={thumbnails[selectedImage]}
               alt="Havic HV G-92 Gamepad"
             />
           </div>

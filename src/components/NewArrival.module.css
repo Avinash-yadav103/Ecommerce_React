@@ -48,15 +48,15 @@
   }
   
   .women {
-    background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url("path-to-women-image.jpg") center / cover;
+    background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url("https://images.unsplash.com/photo-1483985988355-763728e1935b") center / cover;
   }
   
   .speakers {
-    background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url("path-to-speakers-image.jpg") center / cover;
+    background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url("https://images.unsplash.com/photo-1545454675-3531b543be5d") center / cover;
   }
   
   .perfume {
-    background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url("path-to-perfume-image.jpg") center / cover;
+    background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url("https://images.unsplash.com/photo-1594035910387-fea47794261f") center / cover;
   }
   
   .content {
@@ -149,5 +149,4 @@
       gap: 30px;
     }
   }
-  
-  
+
