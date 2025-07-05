@@ -40,16 +40,27 @@
     transition: all 0.3s ease;
   }
   
-  .navButton:hover {
+  .navButton:hover:not(.disabled) {
     background: #db4444;
     color: white;
     border-color: #db4444;
+  }
+  
+  .navButton.disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
   }
   
   .categoryGrid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(170px, 1fr));
     gap: 20px;
+  }
+  
+  .categoryLink {
+    text-decoration: none;
+    color: inherit;
+    display: block;
   }
   
   .categoryCard {
@@ -59,9 +70,12 @@
     justify-content: center;
     padding: 25px;
     border: 1px solid #d9d9d9;
-    border-radius: 4px;
+    border-radius: 8px;
     cursor: pointer;
     transition: all 0.3s ease;
+    position: relative;
+    background-color: white;
+    height: 150px;
   }
   
   .categoryCard:hover {
@@ -81,6 +95,75 @@
   .iconWrapper {
     margin-bottom: 16px;
     color: #000;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
   }
   
+  .tooltip {
+    position: absolute;
+    bottom: -60px;
+    left: 0;
+    right: 0;
+    background-color: rgba(0, 0, 0, 0.8);
+    color: white;
+    padding: 8px;
+    border-radius: 4px;
+    font-size: 12px;
+    z-index: 10;
+    text-align: center;
+    pointer-events: none;
+  }
   
+  .tooltip:after {
+    content: '';
+    position: absolute;
+    top: -6px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 0;
+    height: 0;
+    border-left: 6px solid transparent;
+    border-right: 6px solid transparent;
+    border-bottom: 6px solid rgba(0, 0, 0, 0.8);
+  }
+  
+  @media (max-width: 768px) {
+    .categoryGrid {
+      grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+      gap: 15px;
+    }
+    
+    .categoryCard {
+      padding: 20px 15px;
+      height: 130px;
+    }
+    
+    .iconWrapper {
+      margin-bottom: 10px;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .categoryGrid {
+      grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+      gap: 10px;
+    }
+    
+    .categoryCard {
+      padding: 15px 10px;
+      height: 110px;
+    }
+    
+    .header {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+    
+    .navigation {
+      align-self: center;
+      margin-top: 15px;
+    }
+  }
+
