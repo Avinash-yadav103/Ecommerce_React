@@ -10,6 +10,7 @@ import NewArrival from "../components/NewArrival";
 import FlashSale from "../components/FlashSale";
 import AOS from 'aos';
 import 'aos/dist/aos.css';
+import HeroSlider from '../components/HeroSlider';
 
 function Home() {
   useEffect(() => {
@@ -43,7 +44,7 @@ function Home() {
             transition={{ duration: 0.5, delay: 0.3 }}
           >
             <div className="hero-section" data-aos="fade-up">
-              <HomeSlider />
+              <HeroSlider />
             </div>
           </motion.div>
         </div>
